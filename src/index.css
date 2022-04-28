@@ -16,11 +16,13 @@ body {
 
 .square[data-active="true"] {
     background-color: rgb(253 224 71);
+    box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.15);
 }
 
 
 .square[data-knight="true"] {
     background-color: rgb(34 197 94);
+    
 }
 .square[data-knight="true"]:focus-within {
     outline: 3px solid rgb(59 130 246);
