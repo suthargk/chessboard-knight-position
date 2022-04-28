@@ -33,7 +33,7 @@ const positionReducer = (state, action) => {
   }
 };
 
-const ChessBoard = ({ size }) => {
+const ChessBoard = ({ size,  onReset, }) => {
   const rows = Array(8).fill(0);
   const [position, dispatchPosition] = useReducer(positionReducer, {
     selectedKnightPosition: { row: null, col: null },
@@ -69,6 +69,9 @@ const ChessBoard = ({ size }) => {
             handleOnClick={handleOnClick}
           />
         ))}
+      </div>
+      <div className="my-5 w-full text-center lg:w-auto">
+        <button type="button" onClick={onReset} className="w-full lg:w-auto px-4 py-2 lg:px-16 text-lg transition duration-300 hover:bg-sky-500 hover:border-sky-600 border border-gray-50 rounded focus:outline focus:outline-4 focus:border-0 focus:outline-sky-600">Reset</button>
       </div>
     </div>
   );

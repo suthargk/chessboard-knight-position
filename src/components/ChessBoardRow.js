@@ -5,6 +5,7 @@ const ChessBoardRow = ({
   indexRow,
   position,
   handleOnClick,
+ 
 }) => {
   const cols = Array(8).fill(0)
   return (
