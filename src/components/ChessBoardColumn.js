@@ -1,4 +1,5 @@
 import React from "react";
+import Knight from '../icons/Knight'
 
 const handlPositionCondition = (position, row, col) => {
   if (
@@ -29,16 +30,13 @@ const ChessBoardColumn = ({ col, row, position, handleOnClick }) => {
   return (
     <div
       className="lg:h-20 lg:w-20 h-11 w-11 md:h-16 md:w-16 square cursor-pointer border border-gray-50"
-      data-knight={
-        position?.selectedKnightPosition?.col === col &&
-        position?.selectedKnightPosition?.row === row
-      }
       data-active={handlPositionCondition(position, row, col)}
       data-color={(row + col) % 2 !== 0 ? true: false}
       onClick={() => console.log(row, col) || handleOnClick(row, col)}
     >
-      <span className="row"></span>
-      <span className="col"></span>
+      { (position?.selectedKnightPosition?.col === col &&
+        position?.selectedKnightPosition?.row === row)  && <span><Knight /></span>}
+    
     </div>
   );
 };
